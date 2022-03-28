@@ -1,9 +1,7 @@
 package ru.nigma.springcourse.models;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+
+import javax.validation.constraints.*;
 
 public class Person {
     private int id;
@@ -13,6 +11,7 @@ public class Person {
     private String name;
 
     @Min(value = 0, message = "Age should be greater then 0!")
+    @Max(value = 120, message = "Age should be smaller then 120")
     private int age;
 
     @NotEmpty(message = "Email should not be empty!")
